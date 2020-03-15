@@ -10,9 +10,9 @@ import {
 } from "@material-ui/core";
 
 import firebase from "../../firebase/firebase";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
-class Login extends Component {
+class ResetPassword extends Component {
   async componentDidMount() {
     try {
       console.log(
@@ -45,7 +45,7 @@ class Login extends Component {
                   fontSize: "2em"
                 }}
               >
-                Welcome
+                Password Reset
               </Typography>
               <Typography
                 style={{
@@ -65,16 +65,9 @@ class Login extends Component {
               variant="outlined"
               margin="normal"
             />
-            <TextField
-              required
-              label="Password"
-              defaultValue=""
-              type="password"
-              variant="outlined"
-              margin="normal"
-            />
+
             <Button variant="contained" color="primary" size="small">
-              Login
+              Reset my password
             </Button>
             <div
               style={{
@@ -87,16 +80,17 @@ class Login extends Component {
               <Button
                 color="primary"
                 size="small"
-                onClick={() => this.props.history.push("/register")}
+                onClick={() => this.props.history.push("/login")}
               >
-                Register
+                Log In
               </Button>
+
               <Button
                 color="primary"
                 size="small"
-                onClick={() => this.props.history.push("/reset-password")}
+                onClick={() => this.props.history.push("/register")}
               >
-                Reset Password
+                Register
               </Button>
             </div>
           </Container>
@@ -106,4 +100,4 @@ class Login extends Component {
   }
 }
 
-export default withRouter(Login);
+export default withRouter(ResetPassword);
